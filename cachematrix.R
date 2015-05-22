@@ -1,6 +1,6 @@
 ## Programming assignment 2 by Eric Warnke 2015
-## 
-
+## 95% of this program was based on the cache mean example
+## provided by the course.
 
 ## Matrix inversion is usually a costly computation and there may be some
 ## benefit to caching the inverse of a matrix rather than computing it
@@ -33,10 +33,12 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         m <- x$getsolve()
+        # have we solved it already
         if(!is.null(m)) {
                 message("getting cached data")
                 return(m)
         }
+        # otherwise solve and cache result
         data <- x$get()
         m <- solve(data, ...)
         x$setsolve(m)
