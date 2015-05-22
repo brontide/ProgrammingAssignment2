@@ -8,6 +8,21 @@
 ## discuss here). Your assignment is to write a pair of functions that cache the
 ## inverse of a matrix.
 
+# > c <- matrix(rnorm(16),4,4)             
+# > c.solve <- solve(c)
+# > test <- makeCacheMatrix(c)
+# > test.solve <- cacheSolve(test)
+# > identical(c.solve, test.solve)
+# [1] TRUE
+# > test.solve <- cacheSolve(test)
+# getting cached data
+# > identical(c.solve, test.solve)
+# [1] TRUE
+# > test$set(c)
+# > test.solve <- cacheSolve(test)
+# > identical(c.solve, test.solve)
+# [1] TRUE
+
 ## This function creates a special "matrix" object that can cache its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
